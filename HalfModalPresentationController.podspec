@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "HalfModalPresentationController"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A short description of HalfModalPresentationController."
   s.description  = <<-DESC
 			Presents a modal view controller on half the screen
@@ -19,4 +19,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "11.0"
   s.source       = { :git => "https://github.com/larsschwegmann/HalfModalPresentationController.git", :tag => "0.0.1" }
   s.source_files  = "HalfModalPresentationController/Presentation/*.swift", "HalfModalPresentationController/Transitioning/*.swift"
+  s.framework  = 'UIKit'
 end
