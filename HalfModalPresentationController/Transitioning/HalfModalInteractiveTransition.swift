@@ -28,8 +28,6 @@ class HalfModalInteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
         super.startInteractiveTransition(transitionContext)
-        
-        print("start interactive")
     }
     
     override var completionSpeed: CGFloat {
@@ -66,13 +64,8 @@ class HalfModalInteractiveTransition: UIPercentDrivenInteractiveTransition {
         case .ended, .cancelled:
             if pan.state == .cancelled || !shouldComplete {
                 cancel()
-                
-                print("cancel transition")
-            }
-            else {
+            } else {
                 finish()
-                
-                print("finished transition")
             }
             
             break

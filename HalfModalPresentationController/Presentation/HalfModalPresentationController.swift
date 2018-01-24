@@ -86,16 +86,12 @@ class HalfModalPresentationController : UIPresentationController {
             coordinator.animate(alongsideTransition: { (context) -> Void in
                 self.dimmingView.alpha = 0
                 self.presentingViewController.view.transform = CGAffineTransform.identity
-            }, completion: { (completed) -> Void in
-                print("done dismiss animation")
-            })
+            }, completion: nil)
             
         }
     }
     
-    override func dismissalTransitionDidEnd(_ completed: Bool) {
-        print("dismissal did end: \(completed)")
-        
+    override func dismissalTransitionDidEnd(_ completed: Bool) {        
         if completed {
             dimmingView.removeFromSuperview()
             _dimmingView = nil
