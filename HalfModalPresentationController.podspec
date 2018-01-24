@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name         = "HalfModalPresentationController"
-  s.version      = "0.0.2"
+  s.name         = "HalfModal"
+  s.version      = "0.0.3"
   s.summary      = "A short description of HalfModalPresentationController."
   s.description  = <<-DESC
 			Presents a modal view controller on half the screen
