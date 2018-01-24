@@ -10,7 +10,7 @@ import UIKit
 
 class HalfModalPresentationController : UIPresentationController {
     var isMaximized: Bool = false
-    
+    var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     var _dimmingView: UIView?
     var dimmingView: UIView {
         if let dimmedView = _dimmingView {
@@ -32,6 +32,10 @@ class HalfModalPresentationController : UIPresentationController {
         
         // Add the vibrancy view to the blur view
         blurEffectView.contentView.addSubview(vibrancyEffectView)
+        
+        //Add tap recognizer to dimming view
+        tapGestureRecognizer.addTarget(self, action: #selector(dismiss))
+        view.addGestureRecognizer(tapGestureRecognizer)
         
         _dimmingView = view
         
@@ -98,6 +102,10 @@ class HalfModalPresentationController : UIPresentationController {
             
             isMaximized = false
         }
+    }
+    
+    @objc func dismiss() {
+        self.presentedViewController.dismiss(animated: true, completion: nil)
     }
 }
 
